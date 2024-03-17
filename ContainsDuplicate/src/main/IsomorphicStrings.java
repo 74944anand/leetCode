@@ -7,26 +7,27 @@ public class IsomorphicStrings {
 
 	
 	    public static boolean isIsomorphic(String s, String t) {
-	       if (s.length() != t.length()) {
-	            return false;
-	        }
-	        Map<Character, Integer> mapS = new HashMap<>();
-	        Map<Character, Integer> mapT = new HashMap<>();
-	        
-	        // Populate maps with the frequency of characters
-	        for (char c : s.toCharArray()) {
-	            mapS.put(c, mapS.getOrDefault(c, 0) + 1);
-	        }
-	        for (char c : t.toCharArray()) {
-	            mapT.put(c, mapT.getOrDefault(c, 0) + 1);
-	        }
-	        
-	        System.out.println(mapS);
-	        System.out.println(mapT);
-	        System.out.println(mapS.values());
-	        System.out.println(mapT.values());
-	        // Compare the values of the maps
-	        return mapS.values().equals(mapT.values());
+	    	 if(s.length() != t.length())
+	             return false;
+	         // Create two maps for s & t strings...
+	         int[] map1 = new int[256];
+	         int[] map2 = new int[256];
+	         // Traverse all elements through the loop...
+	         for(int idx = 0; idx < s.length(); idx++){
+	             // Compare the maps, if not equal, return false...
+	        	 System.out.println(map1[s.charAt(idx)]);
+	        	 System.out.println(map2[t.charAt(idx)]);
+	        	 System.out.println(map1[s.charAt(idx)] != map2[t.charAt(idx)]);
+	             if(map1[s.charAt(idx)] != map2[t.charAt(idx)]) {
+	            	 
+	            	 return false;
+	            	 
+	             }    
+	             // Insert each character if string s and t into seperate map...
+	             map1[s.charAt(idx)] = idx + 1;
+	             map2[t.charAt(idx)] = idx + 1;
+	         }
+	         return true;
 	    }
 	public static void main(String[] args) {
 		
