@@ -3,12 +3,12 @@ import java.security.SecureRandom;
 
 public class RandomPassGenrator {
 
-	private static final String LOWECASE_CHAR="abcdefghijklmnopqrstuvwxyz"; 
-	private static final String UPPER_CHAR=LOWECASE_CHAR.toUpperCase(); 
-	private static final String NUMBER="0123456789"; 
+	private static final String LOWERCASE_CHAR="abcdefghijklmnopqrstuvwxyz"; 
+	private static final String UPPER_CHAR = LOWERCASE_CHAR.toUpperCase(); 
+	private static final String NUMBER = "0123456789"; 
 	private static final String OTHER_CHAR="!@#$%^&*()";
 	
-	private static final String BASE_PASSWORD_CHAR=LOWECASE_CHAR+UPPER_CHAR+OTHER_CHAR+NUMBER;
+	private static final String BASE_PASSWORD_CHAR=LOWERCASE_CHAR+UPPER_CHAR+OTHER_CHAR+NUMBER;
 	private static final SecureRandom random=new SecureRandom();
 	
 	public static String genartePassword(int length) {
